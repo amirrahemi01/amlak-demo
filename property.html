@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<title>پنت‌هاوس مدرن نیاوران | املاک توافق</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anjoman:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Anjoman';
+            src: url('https://fonts.cdnfonts.com/css/anjoman') format('woff2');
+            /* Fallback to systemic sans-serif if font not found */
+        }
+        
+        body {
+            font-family: 'Anjoman', Tahoma, sans-serif;
+            background-color: #0b1326;
+            color: #dae2fd;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ai-glow {
+            box-shadow: 0 0 40px 5px rgba(149, 211, 186, 0.15);
+        }
+
+        .shimmer-border {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .shimmer-border::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(149, 211, 186, 0.3), transparent 30%);
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(149, 211, 186, 0.3);
+            border-radius: 10px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-container-high": "#222a3d",
+                        "on-tertiary-container": "#a7b2c9",
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "on-tertiary": "#263143",
+                        "on-error": "#690005",
+                        "secondary-container": "#af8d11",
+                        "surface-container-lowest": "#060e20",
+                        "inverse-on-surface": "#283044",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary-container": "#3a4558",
+                        "primary": "#95d3ba",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-surface-variant": "#bfc9c3",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#404944",
+                        "on-primary-fixed": "#002117",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#064e3b",
+                        "secondary": "#e9c349",
+                        "surface-container-low": "#131b2e",
+                        "on-surface": "#dae2fd",
+                        "on-secondary": "#3c2f00",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "tertiary-fixed": "#d8e3fb",
+                        "on-background": "#dae2fd",
+                        "background": "#0b1326",
+                        "surface-bright": "#31394d",
+                        "inverse-surface": "#dae2fd",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-secondary-container": "#342800",
+                        "inverse-primary": "#2b6954",
+                        "tertiary": "#bcc7de",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#2d3449",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-tint": "#95d3ba",
+                        "on-tertiary-fixed": "#111c2d",
+                        "on-primary-container": "#80bea6",
+                        "primary-fixed": "#b0f0d6",
+                        "secondary-fixed": "#ffe088",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "on-primary": "#003829",
+                        "surface-variant": "#2d3449",
+                        "outline": "#89938d",
+                        "surface-dim": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "margin-page": "24px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anjoman"],
+                        "numeric-data": ["Anjoman"],
+                        "body-md": ["Anjoman"],
+                        "headline-xl": ["Anjoman"],
+                        "body-lg": ["Anjoman"],
+                        "headline-lg": ["Anjoman"],
+                        "label-sm": ["Anjoman"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "numeric-data": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["40px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "700"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex flex-row justify-between items-center px-margin-page py-stack-md w-full max-w-container-max mx-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary" onclick="location.href='index.html'" style="cursor:pointer;">املاک توافق</div>
+<div class="hidden md:flex flex-row gap-stack-lg items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="index.html">صفحه اصلی</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="search.html">جستجوی ملک</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">پروژه‌ها</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="team.html">تیم ما</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">تماس با ما</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-sm text-label-sm active:scale-95 transition-transform hover:bg-primary hover:text-on-primary">
+                ثبت ملک
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 pb-stack-lg">
+<!-- Full-screen Glassmorphic Header / Gallery -->
+<section class="px-margin-page max-w-container-max mx-auto mb-stack-lg">
+<div class="relative h-[614px] md:h-[768px] rounded-xl overflow-hidden glass-card group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-end luxury penthouse apartment in Tehran with floor-to-ceiling windows overlooking the city at twilight. The interior is decorated with modern glassmorphic furniture, warm ambient lighting, and elegant Persian rugs. The atmosphere is sophisticated and cinematic, utilizing a palette of deep blues, emerald greens, and soft golds in a high-contrast dark-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClelANxmkhfS99JUfwylNB5jP_Uu585hhxFWcTm5yqZypx4nT_Cqx2bfagLMk1KNtPxgzFcTVie4OXSCr0FyTyZp57nfNuH7o8MMk2zj3YuGVuIEAw9uwuQCYYiiTOL7FKdAQiphLa3h8WQNRDvhzqbD10pxsqmDbTDXnMG_xcrKf3ybGo6sUcc9pcFztRXxeIHm196xvcSxbsvRXKDthWGVVogbk8jQC16c8dopQ-OnE4LRqnMuZtbsO8a4OMkHOr53l86s71lVmo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<!-- Gallery UI Overlays -->
+<div class="absolute bottom-margin-page right-margin-page left-margin-page flex justify-between items-end z-10">
+<div class="text-right">
+<span class="bg-primary/20 backdrop-blur-md text-primary px-3 py-1 rounded-full text-label-sm font-label-sm mb-2 inline-block">آپارتمان لوکس</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-1">پنت‌هاوس مدرن نیاوران</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                            تهران، محله نیاوران، خیابان بوکان
+                        </p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-weight="fill">favorite</span>
+</button>
+</div>
+</div>
+<!-- Gallery Thumbs (Desktop) -->
+<div class="absolute top-margin-page left-margin-page flex flex-col gap-stack-sm z-10 hidden md:flex">
+<div class="w-24 h-24 rounded-lg overflow-hidden border-2 border-primary/50 cursor-pointer glass-card">
+<img class="w-full h-full object-cover" data-alt="An ultra-modern architectural detail of a luxury balcony with glass railings, looking out over a misty mountain landscape. The lighting is soft and ethereal, reflecting off metallic surfaces and polished stone. Cinematic quality with a deep teal and emerald color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO3IyGLLVT197t9fS1dTAYWpXGdlRWQ6kUdPzb7dy8qFAJkrwNwteOY09DmLjGKCz1WUZTePeGy9_9PyFj0WxP-o-YE1xYze79dPQDNqvZEF66FEYwH_N1WaVtsUskKFhzvLS2mnrb7szVnJyzqD4-zoIHWwJmW0CiT2Rl1Sn7TzjgeNwv0mzJc5IHkChln9X-et9ehizx-S5B4tqfxKh7Lz0d_RaaGhn8i4TAmXItCRKEZHLRxu7N6BEgoTEYeC6nLEgYdd0HyVbu"/>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden border border-white/10 cursor-pointer glass-card hover:border-primary/50 transition-colors">
+<img class="w-full h-full object-cover" data-alt="A minimalist kitchen in a high-end apartment featuring dark marble countertops, hidden LED lighting strips, and matte black fixtures. The scene is illuminated by cool-toned morning light coming through a large window. High-end modern aesthetic with glassmorphic reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAua-22EPi4pR8iBuLmE3PzVRviL3IjYgCftI--uIS_WUwRqM61_M6F-E5EsEwnsEDqL2m2U9C3pKmEOqU41dobSE2WgDHVeC5_DdEgmXI0yVh9ALnhKfKWxjJMd2Gf5OVN9OSqN_vlWNzyptWYm_ODOxB9DC8zS6RyB_S4mf3m7f1KlrX3fgoXQb0rvitsCGh8CJergU6E2xYI0BMYfa7jJAXe78N5cvPNPOj6ZUfeEmu_cp8kp6PwLWhSd92kueUBGeSd2MgDmldI"/>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden border border-white/10 cursor-pointer glass-card hover:border-primary/50 transition-colors relative">
+<img class="w-full h-full object-cover" data-alt="A wide angle shot of a spacious living area with minimalist architectural lines, featuring a large abstract digital art piece on the wall. The floors are polished dark wood, reflecting the warm glow of recessed lights. Premium dark mode interior design with deep emerald accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0e6543Qt-PWYhDTaL9hXchupwNWzPez-Qvk42nuTT2IooQP8TsSv2dKZ3eDWKnKlrHEHm22lOnD9ei9tnGDZFgEwW5VU3L-bw2Yd9PCSQNch6fkV3n6uqlUTLWnpxQs7kVNzUPPP9MVKjlc7DxbVUoQssG_qoLlf9JLCy6Hr9lSqDbgE967QTW0qBgz74U4swmKFtVpydeQEO2hyktfoXUVQA-26pEJtw8VHeTUR1FZXyvjsU9CUrpP5uKQsQD6b5PmNy_kLsvmwj"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center text-on-surface font-numeric-data">+۱۲</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Information -->
+<section class="px-margin-page max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- Right Column: Details & Description -->
+<div class="lg:col-span-8 space-y-stack-lg">
+<!-- Quick Specs Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-stack-md">
+<div class="glass-card p-stack-md rounded-lg text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">square_foot</span>
+<div class="font-numeric-data text-numeric-data text-on-surface">۳۸۰</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">متراژ (متر)</div>
+</div>
+<div class="glass-card p-stack-md rounded-lg text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">bed</span>
+<div class="font-numeric-data text-numeric-data text-on-surface">۴</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">اتاق خواب</div>
+</div>
+<div class="glass-card p-stack-md rounded-lg text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">floor</span>
+<div class="font-numeric-data text-numeric-data text-on-surface">۱۸</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">طبقه</div>
+</div>
+<div class="glass-card p-stack-md rounded-lg text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">calendar_today</span>
+<div class="font-numeric-data text-numeric-data text-on-surface">۱۴۰۲</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">سال ساخت</div>
+</div>
+</div>
+<!-- Main Description Card -->
+<div class="glass-card p-stack-lg rounded-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">توضیحات ملک</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-loose">
+                        این واحد استثنایی در یکی از برترین برج‌های باغ منطقه نیاوران واقع شده است. طراحی داخلی توسط تیم معماری بنام، با استفاده از متریال تماماً برند اروپایی انجام شده. دید پانوراما به کوهستان و شهر، تراس گاردن وسیع، و سیستم هوشمند تمام خودکار از ویژگی‌های بارز این ملک می‌باشد.
+                    </p>
+<div class="mt-stack-lg pt-stack-md border-t border-white/5 grid grid-cols-2 md:grid-cols-3 gap-y-4">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            استخر، سونا، جکوزی
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            لابی من ۲۴ ساعته
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            پارکینگ اختصاصی (۳ مورد)
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            سالن اجتماعات و جیم
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            روف گاردن مشجر
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+                            آسانسور باربر مجزا
+                        </div>
+</div>
+</div>
+<!-- Interactive Map Section -->
+<div class="glass-card p-stack-lg rounded-xl overflow-hidden">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">موقعیت روی نقشه</h2>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-1">
+                            مشاهده نقشه بزرگتر
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="h-64 rounded-lg overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center" data-location="Niavaran, Tehran" style="">
+<img class="w-full h-full object-cover opacity-60" data-alt="A stylized, minimalist satellite map view of the Niavaran neighborhood in Tehran. The map features a dark navy and emerald color palette with glowing streets and subtle gold markers for points of interest. The design is sleek, modern, and high-contrast, fitting a premium real estate application's dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6BbGBOAZP24KSkE92qNv3INs1GYq2olyvd43_vUy-aDZUICfvsA-KnU-EQJyKjCxL1HJXjp1CFLM4B213AzNnBN-_zT8pfFECvMmZjbTAB8iKOrw3U9tgTQ0bRoXsLO7y3DO43RmvLGcFCue7oo_yN7JwlKv3LofzE6fn7nrTIcN9YUEK9zVy5232OP1GXG3zgClvXU5LPTcNiqB6asE_RrS6GLg83hLVqaFbQ1LAz0mN71iZLde4nd3JCrjvsGdvIjAR1hs76wXw"/>
+<div class="absolute flex flex-col items-center">
+<div class="w-8 h-8 bg-primary rounded-full ai-glow flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-on-primary">location_on</span>
+</div>
+<div class="bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full text-label-sm mt-2 border border-white/10">موقعیت تقریبی ملک</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Left Column: Pricing & Contact Sticky -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-stack-lg">
+<!-- Pricing Card -->
+<div class="glass-card p-stack-lg rounded-xl border-primary/20 bg-primary/5 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-2">قیمت کل</div>
+<div class="flex items-baseline gap-2 mb-stack-md">
+<span class="font-numeric-data text-4xl text-primary">۱۸۵,۰۰۰,۰۰۰,۰۰۰</span>
+<span class="font-body-md text-body-md text-on-surface-variant">تومان</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-4">قیمت هر متر: ۴۸۶,۸۰۰,۰۰۰ تومان</div>
+<div class="space-y-3">
+<button class="w-full py-4 rounded-full bg-primary text-on-primary font-headline-lg-mobile text-body-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">call</span>
+                                درخواست بازدید
+                            </button>
+<button class="w-full py-4 rounded-full border border-primary/30 text-primary font-headline-lg-mobile text-body-lg flex items-center justify-center gap-2 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+                                گفتگو با مشاور املاک
+                            </button>
+</div>
+</div>
+<!-- Consultant Card -->
+<div class="glass-card p-stack-md rounded-xl flex items-center gap-stack-md">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a premium real estate consultant, a man in a sharp dark charcoal suit with a friendly and confident expression. The background is a blurred high-end office with warm lighting. Studio lighting quality, professional portraiture, dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB84eX-UtEv7U8zt_7eHDHjEokLdZZ7310YS41OURWX-MZeXOSH5esKkjhwtFvcNhrSU_vjmE-j32O4HYgZFNdeiQVQ8edEZX4zzmaBe7c5nKb7Fg4P0c_No9X02R189awdu4jSlKH663S1WM1clXtYCtOWQL0sMIPr0nRQBJVhjREsRel6ANaM70l66QNwe_gmymVBAXFqxnx2QvP4OwprENKqnKPd6DgIXkS3g5HB3k2hO0mRJceRksduPGnb-hzlLPkG1C7cJiqL"/>
+</div>
+<div>
+<div class="font-body-lg text-on-surface font-bold">مهندس رادمان آریا</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">کارشناس ارشد منطقه ۱</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary text-sm" data-weight="fill">star</span>
+<span class="font-numeric-data text-label-sm text-on-surface">۴.۹</span>
+<span class="text-xs text-on-tertiary-container">(۲۴ نظر)</span>
+</div>
+</div>
+<button class="mr-auto w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+</div>
+<!-- AI Insights Shimmer Card -->
+<div class="shimmer-border">
+<div class="relative z-10 glass-card p-stack-md rounded-xl m-[1px]">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">تحلیل هوشمند بازار</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">قیمت این ملک ۵٪ پایین‌تر از میانگین منطقه است. پتانسیل رشد سرمایه‌گذاری عالی پیش‌بینی می‌شود.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Similar Properties Horizontal Scroll -->
+<section class="mt-stack-lg px-margin-page max-w-container-max mx-auto overflow-hidden">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">املاک مشابه</h3>
+<div class="flex gap-stack-md overflow-x-auto pb-4 custom-scrollbar">
+<!-- Card 1 -->
+<div class="min-w-[300px] glass-card rounded-xl overflow-hidden hover:scale-[1.01] transition-transform">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A modern architectural house with large glass windows and an infinity pool, reflecting the warm orange and pink hues of a sunset. The surrounding landscape is lush with dark green foliage. The scene is elegant and peaceful, utilizing high-end dark-mode visual elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYLtp4ArYUGMii_X84YJPYR27wFjapMCvZWc6kZ0WPxIocdfQRlsTXM0zv_I1nod9J52Sn5Z2tZ5Jc8jKYd_LvwS5_D-hgdDSPLQggrydxD6Bzbrum87BO_EHNex7RnuZxRUUKJNk4DgXs2W1KdE7RJ29IA3VVaJK4LRVljGKZt3DSxkdPpvrYUmw9cWLk9Dp8nVYgWsZk0Uu4AtE4ZeLGGxnrprLEyp2G_JP645fXAtZyJL82LfJbfd95p_VSVoywDfyWq9Ye2eb"/>
+<div class="absolute top-2 right-2 bg-surface/60 backdrop-blur-md px-2 py-1 rounded-full text-xs text-on-surface">نیاوران</div>
+</div>
+<div class="p-stack-md">
+<div class="font-body-md text-on-surface font-bold mb-1">واحد ۲۵۰ متری برج باغ</div>
+<div class="flex justify-between items-center">
+<div class="font-numeric-data text-primary">۱۲۰ میلیارد</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-xs">bed</span> ۳
+                            </div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[300px] glass-card rounded-xl overflow-hidden hover:scale-[1.01] transition-transform">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A luxury apartment interior with minimalist white and grey decor, featuring high-end lighting fixtures and expansive views of the city skyline through large windows. The lighting is bright and clear, creating a sophisticated and clean aesthetic suitable for a premium dark-mode theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5xPNduClOz27yQg5IKZk25J9DoC8EVjZGZlvbjx2XKVPwVFCEwFEgEtlEXyd6Egbeex683irpcPsAniyazY-6dz1h98KcF5DWOe4azjIc3L0GsmASIbWJomWasLSOIe_M4Fe7UGeYc0Hqmhwwkf3FRzy5bPjldh1tM_gxJic4W0vjgpnNo_CLwSz89NazwRw18NBobk_sFkgZjriTURto15UY7SZp8GBm5PmfYeLKLmMuANV1ze-QzJGy_4TcEVv2FnfjTIUxkJhB"/>
+<div class="absolute top-2 right-2 bg-surface/60 backdrop-blur-md px-2 py-1 rounded-full text-xs text-on-surface">فرشته</div>
+</div>
+<div class="p-stack-md">
+<div class="font-body-md text-on-surface font-bold mb-1">تک واحدی خیابان چناران</div>
+<div class="flex justify-between items-center">
+<div class="font-numeric-data text-primary">۲۱۰ میلیارد</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-xs">bed</span> ۵
+                            </div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[300px] glass-card rounded-xl overflow-hidden hover:scale-[1.01] transition-transform">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="An elegant residential building exterior with modern stone facade and glass balconies at dusk. Soft warm yellow lights glow from the windows against the deep blue night sky. High contrast, premium feel with a focus on architectural lines and texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMKL8M9dVxc9X8MjectGhH_6uL4koNOGCSy6SICndIdwMrT2Vs15cFlNuXpQHB8pZ6j2MUhUZf9nNzi7T_DK1mUEpS_EOHFm_YXJSTZ7ncQJtsjmRu5aB8-_3mpH_KKBvvBUzsI-o1S8Ic7zIfENi4BWAvrC66mFTU4cLwZ2I37Jss8j0hxLD3d_Tm6URHmMKsKmzhe-C-JqEe8LTqbzuyiXH51U4-f8tC-zDig7fPVyu6JYlfjowNBKVw6bapEsfLeEpBYQZxAsTR"/>
+<div class="absolute top-2 right-2 bg-surface/60 backdrop-blur-md px-2 py-1 rounded-full text-xs text-on-surface">زعفرانیه</div>
+</div>
+<div class="p-stack-md">
+<div class="font-body-md text-on-surface font-bold mb-1">پروژه مدرن زعفرانیه</div>
+<div class="flex justify-between items-center">
+<div class="font-numeric-data text-primary">۱۶۵ میلیارد</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-xs">bed</span> ۴
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-margin-page left-margin-page z-50 group">
+<div class="bg-primary text-on-primary w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl ai-glow relative hover:scale-110 transition-all active:scale-95">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<!-- Tooltip -->
+<div class="absolute right-full mr-4 bg-surface-container-highest text-on-surface px-4 py-2 rounded-xl text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 backdrop-blur-xl">
+                مشاوره مستقیم با رادمان
+            </div>
+</div>
+</button>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-surface-container-lowest border-t border-white/5 mt-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-page gap-stack-md max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg text-primary" onclick="location.href='index.html'" style="cursor:pointer;">املاک توافق</div>
+<div class="flex flex-row gap-stack-md">
+<a class="text-on-tertiary-container hover:text-secondary-fixed-dim transition-all font-body-md text-body-md" href="#">قوانین و مقررات</a>
+<a class="text-on-tertiary-container hover:text-secondary-fixed-dim transition-all font-body-md text-body-md" href="#">حریم خصوصی</a>
+<a class="text-on-tertiary-container hover:text-secondary-fixed-dim transition-all font-body-md text-body-md" href="#">سوالات متداول</a>
+<a class="text-on-tertiary-container hover:text-secondary-fixed-dim transition-all font-body-md text-body-md" href="#">نقشه سایت</a>
+</div>
+<p class="font-body-md text-body-md text-on-tertiary-container">© ۱۴۰۲ تمامی حقوق برای املاک توافق محفوظ است.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for active state on nav links
+        const navLinks = document.querySelectorAll('.md\\:flex a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => {
+                    l.classList.remove('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                    l.classList.add('text-on-surface-variant');
+                });
+                link.classList.remove('text-on-surface-variant');
+                link.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+            });
+        });
+
+        // Parallax effect for header image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('section img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+        });
+    </script>
+</body></html>
