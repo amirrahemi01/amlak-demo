@@ -48,6 +48,18 @@
         }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Mobile responsive type scale (base sizes are desktop-first / fixed px) */
+        @media (max-width: 640px) {
+            .text-headline-xl, .font-headline-xl { font-size: 28px !important; line-height: 36px !important; }
+            .text-headline-lg, .font-headline-lg { font-size: 22px !important; line-height: 30px !important; }
+            .text-headline-lg-mobile, .font-headline-lg-mobile { font-size: 20px !important; line-height: 28px !important; }
+            .text-body-lg, .font-body-lg { font-size: 15px !important; line-height: 22px !important; }
+            .text-body-md, .font-body-md { font-size: 14px !important; line-height: 20px !important; }
+            .text-label-sm, .font-label-sm { font-size: 12px !important; line-height: 16px !important; }
+            .text-numeric-data, .font-numeric-data { font-size: 17px !important; line-height: 20px !important; }
+        }
+        #mobile-menu.flex { display: flex; }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -150,13 +162,26 @@
 <div class="hidden md:flex flex-row gap-8 items-center">
 <a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="index.html">صفحه اصلی</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="search.html">جستجوی ملک</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">پروژه‌ها</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="projects.html">پروژه‌ها</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">تیم ما</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">تماس با ما</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">تماس با ما</a>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-body-md hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+<div class="flex items-center gap-2">
+<button class="hidden sm:inline-flex bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20 whitespace-nowrap">
                 ثبت ملک
             </button>
+<button class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors" id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.toggle('hidden');document.getElementById('mobile-menu').classList.toggle('flex')">
+<span class="material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+<div class="hidden md:hidden flex-col gap-1 px-margin-page pb-4 border-t border-white/10 bg-surface/95 backdrop-blur-xl" id="mobile-menu">
+<a class="py-3 text-body-md text-primary font-bold" href="index.html">صفحه اصلی</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="search.html">جستجوی ملک</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="projects.html">پروژه‌ها</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="team.html">تیم ما</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="contact.html">تماس با ما</a>
+<button class="sm:hidden mt-2 bg-primary text-on-primary px-6 py-3 rounded-full text-sm font-bold w-full">ثبت ملک</button>
 </div>
 </nav>
 <main>
@@ -172,10 +197,12 @@
 </h1>
 <!-- AI Search Bar -->
 <div class="max-w-3xl mx-auto glass rounded-3xl p-2 ai-shimmer shadow-[0_0_60px_rgba(149,211,186,0.15)]">
-<div class="flex flex-row items-center bg-surface-container/50 rounded-2xl px-4 py-3">
-<span class="material-symbols-outlined text-primary ml-3" data-icon="search_spark">search_spark</span>
-<input class="bg-transparent border-none focus:ring-0 w-full text-right font-body-lg text-body-lg placeholder:text-on-surface-variant" placeholder="مثلاً: آپارتمان مدرن در نیاوران با ویو کوهستان..." type="text"/>
-<button class="bg-primary text-on-primary px-8 py-2 rounded-xl font-body-md font-bold whitespace-nowrap mr-2 hover:brightness-110 transition-all">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-0 bg-surface-container/50 rounded-2xl px-4 py-3">
+<div class="flex items-center flex-1 min-w-0">
+<span class="material-symbols-outlined text-primary ml-3 shrink-0" data-icon="search_spark">search_spark</span>
+<input class="bg-transparent border-none focus:ring-0 w-full min-w-0 text-right font-body-lg text-body-lg placeholder:text-on-surface-variant" placeholder="مثلاً: آپارتمان مدرن در نیاوران با ویو کوهستان..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-xl font-body-md font-bold whitespace-nowrap sm:mr-2 hover:brightness-110 transition-all shrink-0">
                             جستجوی هوشمند
                         </button>
 </div>
@@ -185,12 +212,12 @@
 </section>
 <!-- Featured Luxury Estates -->
 <section class="py-stack-lg max-w-container-max mx-auto px-margin-page">
-<div class="flex flex-row justify-between items-end mb-10">
-<div>
+<div class="flex flex-row justify-between items-end mb-10 gap-4">
+<div class="min-w-0">
 <h2 class="font-headline-lg text-headline-lg text-primary">املاک برتر و لوکس</h2>
 <p class="font-body-md text-on-surface-variant">دستچینی از مجلل‌ترین پروژه‌های در حال اجرا</p>
 </div>
-<a class="text-secondary font-label-sm flex flex-row items-center gap-1 group" href="search.html">
+<a class="text-secondary font-label-sm flex flex-row items-center gap-1 group shrink-0 whitespace-nowrap" href="search.html">
                     مشاهده همه
                     <span class="material-symbols-outlined text-[18px] group-hover:translate-x-[-4px] transition-transform" data-icon="arrow_back">arrow_back</span>
 </a>
@@ -362,8 +389,8 @@
 <section class="py-stack-lg max-w-container-max mx-auto px-margin-page">
 <h2 class="font-headline-lg text-headline-lg text-primary text-right mb-10">تحلیل بازار و اخبار</h2>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<div class="glass p-8 rounded-[2rem] flex flex-row gap-6 items-start border border-white/5 hover:bg-white/5 transition-all">
-<div class="w-40 h-32 rounded-2xl overflow-hidden shrink-0">
+<div class="glass p-6 sm:p-8 rounded-[2rem] flex flex-col sm:flex-row gap-4 sm:gap-6 items-start border border-white/5 hover:bg-white/5 transition-all">
+<div class="w-full h-40 sm:w-40 sm:h-32 rounded-2xl overflow-hidden shrink-0">
 <div class="w-full h-full bg-cover bg-center" data-alt="A digital abstract visualization of a rising real estate market graph with 3D glowing bars and lines. The colors are deep blue, emerald green, and gold. High-tech financial aesthetic, clean lines, and futuristic atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT60tjlnbHwSn2TB8JrgGiGSKBL8zWqrB-1ijBE-yPvLbF3qNDz_aIXSpqRnkDp8HIJGPMQvKU62LMhgaVeShYm-jb1PXqHyiIkaVVaHCpjRPYVoWB2zuGtBpDQicwWqMm-pI159Y5XDkKoBY6cSyUwibEZukzA545aIc_kEB75WAo6vAlRRO7enSusXkkRszYi-MtRrMhjOq7TytqQsECFW5l46evS8k3Rhj2Aii6z96rtusgj8KuKzdQ38yYDej2ivmEI2g-_0ub')"></div>
 </div>
 <div class="text-right">
@@ -372,8 +399,8 @@
 <p class="font-body-md text-on-surface-variant line-clamp-2">با توجه به نوسانات اقتصادی اخیر، کارشناسان ما روند بازار را در شش ماهه آینده به صورت هوشمند تحلیل کرده‌اند...</p>
 </div>
 </div>
-<div class="glass p-8 rounded-[2rem] flex flex-row gap-6 items-start border border-white/5 hover:bg-white/5 transition-all">
-<div class="w-40 h-32 rounded-2xl overflow-hidden shrink-0">
+<div class="glass p-6 sm:p-8 rounded-[2rem] flex flex-col sm:flex-row gap-4 sm:gap-6 items-start border border-white/5 hover:bg-white/5 transition-all">
+<div class="w-full h-40 sm:w-40 sm:h-32 rounded-2xl overflow-hidden shrink-0">
 <div class="w-full h-full bg-cover bg-center" data-alt="Modern construction site of a luxury high-rise building with golden hour light reflecting off the glass and steel. Cranes in the background, sharp focus, 8k photography, professional architectural style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbvwEPwS60gJwcucmRZsvJpAUgg1BQgn1dAxD6XirIdAfrR0Bo_0q4bJU_9Ci-wn0zgI57AGpz2ijTmqOJV-tvmD_RFvuKf4jNELX8C8HMmd6evH35orBpMbL6-K19kv8GzmcvnRc27BWWo_D5rfyS5xUj996A4gyAXF7wWBwjDrECpuIk07dyqSY_J2gYm0nX7-5eV4sdn5sLUsKzc0MGXEy-rdhS8VXLikQKssJwmHWkmrN5qYALbOxOGXOiuZUmnry0TiadNZiV')"></div>
 </div>
 <div class="text-right">

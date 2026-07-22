@@ -62,6 +62,18 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+
+        /* Mobile responsive type scale (base sizes are desktop-first / fixed px) */
+        @media (max-width: 640px) {
+            .text-headline-xl, .font-headline-xl { font-size: 28px !important; line-height: 36px !important; }
+            .text-headline-lg, .font-headline-lg { font-size: 22px !important; line-height: 30px !important; }
+            .text-headline-lg-mobile, .font-headline-lg-mobile { font-size: 20px !important; line-height: 28px !important; }
+            .text-body-lg, .font-body-lg { font-size: 15px !important; line-height: 22px !important; }
+            .text-body-md, .font-body-md { font-size: 14px !important; line-height: 20px !important; }
+            .text-label-sm, .font-label-sm { font-size: 12px !important; line-height: 16px !important; }
+            .text-numeric-data, .font-numeric-data { font-size: 17px !important; line-height: 20px !important; }
+        }
+        #mobile-menu.flex { display: flex; }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -163,19 +175,31 @@
 <div class="hidden md:flex flex-row gap-gutter">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">صفحه اصلی</a>
 <a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="search.html">جستجوی ملک</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">پروژه‌ها</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="projects.html">پروژه‌ها</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="team.html">تیم ما</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">تماس با ما</a>
 </div>
 </div>
-<div class="flex items-center gap-4">
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-body-md hover:scale-105 active:scale-95 transition-all duration-300">
+<div class="flex items-center gap-2 sm:gap-4">
+<button class="hidden sm:inline-flex bg-primary-container text-on-primary-container px-6 py-2 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap">
                     ثبت ملک
                 </button>
 <button class="text-on-surface-variant p-2 flex items-center justify-center">
 <span class="material-symbols-outlined" data-icon="search">search</span>
 </button>
+<button class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-colors" id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.toggle('hidden');document.getElementById('mobile-menu').classList.toggle('flex')">
+<span class="material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+</button>
 </div>
 </nav>
+<div class="hidden md:hidden flex-col gap-1 px-margin-page pb-4 border-t border-white/10 bg-surface/95 backdrop-blur-xl" id="mobile-menu">
+<a class="py-3 text-body-md text-on-surface-variant" href="index.html">صفحه اصلی</a>
+<a class="py-3 text-body-md text-primary font-bold" href="search.html">جستجوی ملک</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="projects.html">پروژه‌ها</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="team.html">تیم ما</a>
+<a class="py-3 text-body-md text-on-surface-variant" href="contact.html">تماس با ما</a>
+<button class="sm:hidden mt-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full text-sm font-bold w-full">ثبت ملک</button>
+</div>
 </header>
 <main class="pt-28 pb-stack-lg px-margin-page max-w-container-max mx-auto">
 <!-- Breadcrumbs -->
