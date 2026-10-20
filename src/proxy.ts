@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { defaultLang, isLang } from "@/i18n/config";
 
-// Send any path without a locale prefix to the Persian version (/ -> /fa, /listings -> /fa/listings)
+// Send any path without a locale prefix to the default (English) version: / -> /en, /listings -> /en/listings
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
   const first = pathname.split("/")[1];
