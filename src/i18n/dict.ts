@@ -1,0 +1,146 @@
+import type { Lang } from "./config";
+
+const fa = {
+  brand: "املاک",
+  brandShort: "املاک",
+  meta: { title: "املاک | خرید، فروش و اجاره ملک", desc: "جستجوی ساده و مطمئن ملک: آپارتمان، ویلا، خانه ویلایی و املاک تجاری در تهران و شهرهای ایران. (نسخه نمایشی)" },
+  skip: "رفتن به محتوا",
+  nav: { home: "خانه", buy: "خرید", rent: "رهن و اجاره", agents: "مشاوران", contact: "تماس با ما", main: "اصلی", mobile: "منوی موبایل", openMenu: "باز کردن منو", closeMenu: "بستن منو" },
+  favs: "ذخیره‌شده‌ها",
+  theme: { toLight: "تم روشن", toDark: "تم تیره" },
+  switchLang: "English",
+  switchLangLabel: "Switch to English",
+  deal: { sale: "فروش", rent: "رهن و اجاره", buyTab: "خرید", dealType: "نوع معامله" },
+  search: {
+    city: "شهر", allCities: "همه شهرها", hood: "محله", allHoods: "همه محله‌ها", type: "نوع ملک", allTypes: "همه انواع",
+    maxPrice: "سقف قیمت", maxDeposit: "سقف ودیعه", noLimit: "بدون محدودیت", upTo: (v: string) => `تا ${v} تومان`, go: "جستجو",
+    billion: "میلیارد", million: "میلیون",
+  },
+  explorer: {
+    title: "جستجوی ملک", filters: "فیلترها", results: "نتایج", minBeds: "حداقل تعداد خواب", all: "همه",
+    clear: (n: string) => `پاک کردن فیلترها (${n})`, found: (n: string) => `${n} آگهی پیدا شد`,
+    sort: { new: "جدیدترین", cheap: "ارزان‌ترین", exp: "گران‌ترین", area: "بیشترین متراژ" },
+    emptyTitle: "ملکی با این شرایط پیدا نشد", emptySub: "فیلترها را کمی باز کنید یا با مشاوران ما تماس بگیرید.", showAll: "نمایش همه",
+  },
+  card: { m2: "متر", beds: "خواب", baths: "سرویس", deposit: "ودیعه", monthly: "اجاره ماهانه", save: "ذخیره آگهی", unsave: "حذف از ذخیره‌شده‌ها" },
+  toast: { added: "به ذخیره‌شده‌ها اضافه شد", removed: "از ذخیره‌شده‌ها حذف شد", sent: "پیام شما ثبت شد؛ به‌زودی با شما تماس می‌گیریم" },
+  home: {
+    badge: (n: string) => `بیش از ${n} ملک معتبر در سراسر ایران`, h1a: "خانه‌ای که دنبالش بودید،", h1b: "با اطمینان پیدا کنید",
+    sub: "قیمت واقعی، اسناد بررسی‌شده و مشاورانی که تا روز تحویل کلید کنار شما هستند.",
+    stats: [["۱۴ سال", "تجربه"], ["۸٬۵۰۰", "معامله موفق"], ["۹۶٪", "رضایت مشتریان"]],
+    heroAlt: "ویلای مدرن با استخر", byCity: "جستجو بر اساس شهر", count: (n: string) => `${n} آگهی`,
+    featured: "آگهی‌های ویژه", featuredSub: "انتخاب مشاوران ما این هفته", seeAll: "مشاهده همه",
+    why: "چرا ما؟",
+    whyItems: [
+      ["اسناد بررسی‌شده", "پیش از انتشار هر آگهی، مالکیت و وضعیت سند را بررسی می‌کنیم."],
+      ["قیمت واقعی", "تحلیل قیمت بر پایه معاملات اخیر هر محله، نه قیمت‌گذاری هوایی."],
+      ["همراهی تا آخر", "از بازدید تا امضای قرارداد و تحویل، یک مشاور مسئول شماست."],
+      ["پاسخ‌گویی سریع", "درخواست‌های شما معمولا در کمتر از یک ساعت پاسخ داده می‌شود."],
+    ],
+    latest: "تازه‌ترین آگهی‌ها", latestSub: "جدیدترین ملک‌های ثبت‌شده", seeRentals: "مشاهده اجاره‌ها",
+    agents: "مشاوران ما", allAgents: "همه مشاوران",
+    ctaTitle: "ملک خود را می‌فروشید یا اجاره می‌دهید؟", ctaSub: "ارزیابی رایگان قیمت، همین امروز.", ctaBtn: "درخواست ارزیابی رایگان",
+  },
+  detail: {
+    breadcrumb: "مسیر", specs: "مشخصات", area: "متراژ", beds: "خواب", baths: "سرویس", parking: "پارکینگ", none: "ندارد",
+    year: "سال ساخت", floor: "طبقه", ground: "همکف", of: "از", desc: "توضیحات", features: "امکانات", location: "موقعیت",
+    locationAria: (p: string) => `موقعیت تقریبی ${p}`, locationNote: "آدرس دقیق پس از هماهنگی بازدید اعلام می‌شود.",
+    contactAgent: "تماس با مشاور", visit: "درخواست بازدید", visitCta: "ثبت درخواست",
+    subject: (t: string, id: string) => `سلام، برای بازدید از «${t}» (کد ${id}) تماس بگیرید.`,
+    similar: "آگهی‌های مشابه", next: "تصویر بعدی", prev: "تصویر قبلی", image: (n: string) => `تصویر ${n}`, showImage: (n: string) => `نمایش تصویر ${n}`,
+    notFound: "آگهی یافت نشد",
+  },
+  form: { name: "نام و نام خانوادگی", phone: "شماره تماس", msg: "پیام", sending: "در حال ارسال…", send: "ارسال پیام", phonePh: "۰۹۱۲ ۱۲۳ ۴۵۶۷" },
+  agents: {
+    meta: "مشاوران و درباره ما", title: "درباره ما",
+    text: "از سال ۱۳۹۱ به خریداران، فروشندگان و مستاجران کمک می‌کنیم معامله‌ای شفاف و بی‌دغدغه داشته باشند. باور ما ساده است: مشاور خوب اول گوش می‌دهد، بعد پیشنهاد می‌دهد.",
+    stats: [["۱۴", "سال تجربه"], ["۸٬۵۰۰", "معامله موفق"], ["۶", "مشاور متخصص"], ["۹", "شهر تحت پوشش"]],
+    team: "تیم مشاوران", meta2: (y: string, n: string) => `${y} سال سابقه · ${n} آگهی فعال`, cta: "با ما در تماس باشید",
+  },
+  contact: {
+    title: "تماس با ما", sub: "پیام بگذارید یا زنگ بزنید؛ معمولا ظرف یک ساعت پاسخ می‌دهیم.",
+    address: "آدرس", addressV: "تهران، خیابان ولیعصر، بالاتر از پارک ساعی، پلاک ۱۲۰", phone: "تلفن", email: "ایمیل", hours: "ساعت کاری", hoursV: "شنبه تا پنجشنبه، ۹ تا ۱۸",
+  },
+  fav: { title: "آگهی‌های ذخیره‌شده", note: "این لیست فقط روی همین مرورگر ذخیره می‌شود.", emptyTitle: "هنوز آگهی‌ای ذخیره نکرده‌اید", emptySub: "روی قلب هر آگهی بزنید تا اینجا نگهداری شود.", browse: "دیدن آگهی‌ها" },
+  nf: { title: "این صفحه پیدا نشد", text: "شاید آگهی فروخته شده یا آدرس اشتباه است. از صفحه اصلی دوباره جستجو کنید.", home: "صفحه اصلی", browse: "دیدن آگهی‌ها" },
+  footer: {
+    about: "مشاوره صادقانه در خرید، فروش و اجاره ملک؛ با قیمت واقعی، اسناد شفاف و همراهی تا روز تحویل کلید.",
+    quick: "دسترسی سریع", buy: "خرید ملک", rent: "رهن و اجاره", agents: "مشاوران ما", contactTitle: "ارتباط با ما",
+    demo: "نسخه نمایشی؛ تمام آگهی‌ها و اطلاعات فرضی است. © ۱۴۰۵ املاک", credit: "طراحی و توسعه:", dev: "امیر راحمی",
+  },
+};
+
+export type Dict = typeof fa;
+
+const en: Dict = {
+  brand: "Real Estate",
+  brandShort: "Real Estate",
+  meta: { title: "Real Estate | Buy, sell and rent property in Iran", desc: "Simple, trustworthy property search: apartments, villas, houses and commercial property in Tehran and across Iran. (Demo)" },
+  skip: "Skip to content",
+  nav: { home: "Home", buy: "Buy", rent: "Rent", agents: "Agents", contact: "Contact", main: "Main", mobile: "Mobile menu", openMenu: "Open menu", closeMenu: "Close menu" },
+  favs: "Saved",
+  theme: { toLight: "Light theme", toDark: "Dark theme" },
+  switchLang: "فارسی",
+  switchLangLabel: "نمایش به فارسی",
+  deal: { sale: "For sale", rent: "For rent", buyTab: "Buy", dealType: "Deal type" },
+  search: {
+    city: "City", allCities: "All cities", hood: "Neighbourhood", allHoods: "All neighbourhoods", type: "Property type", allTypes: "All types",
+    maxPrice: "Max price", maxDeposit: "Max deposit", noLimit: "No limit", upTo: (v: string) => `Up to ${v}`, go: "Search",
+    billion: "billion", million: "million",
+  },
+  explorer: {
+    title: "Find a property", filters: "Filters", results: "Results", minBeds: "Min. bedrooms", all: "Any",
+    clear: (n: string) => `Clear filters (${n})`, found: (n: string) => `${n} listings found`,
+    sort: { new: "Newest", cheap: "Lowest price", exp: "Highest price", area: "Largest area" },
+    emptyTitle: "No properties match these filters", emptySub: "Try widening your filters or talk to one of our agents.", showAll: "Show all",
+  },
+  card: { m2: "m²", beds: "bed", baths: "bath", deposit: "deposit", monthly: "Monthly rent", save: "Save listing", unsave: "Remove from saved" },
+  toast: { added: "Added to saved listings", removed: "Removed from saved listings", sent: "Message received. We'll call you shortly." },
+  home: {
+    badge: (n: string) => `${n}+ verified properties across Iran`, h1a: "The home you've been looking for,", h1b: "found with confidence",
+    sub: "Real prices, checked documents and agents who stay with you until the keys are in your hand.",
+    stats: [["14 yrs", "Experience"], ["8,500", "Deals closed"], ["96%", "Happy clients"]],
+    heroAlt: "Modern villa with a pool", byCity: "Browse by city", count: (n: string) => `${n} listings`,
+    featured: "Featured listings", featuredSub: "Our agents' picks this week", seeAll: "View all",
+    why: "Why choose us?",
+    whyItems: [
+      ["Verified documents", "We check ownership and title status before any listing goes live."],
+      ["Real prices", "Pricing based on recent deals in each neighbourhood, not guesswork."],
+      ["With you to the end", "From viewing to signing and handover, one agent is responsible for you."],
+      ["Fast replies", "Most requests are answered in under an hour."],
+    ],
+    latest: "Latest listings", latestSub: "Newly added properties", seeRentals: "View rentals",
+    agents: "Our agents", allAgents: "All agents",
+    ctaTitle: "Selling or renting out your property?", ctaSub: "Get a free valuation today.", ctaBtn: "Request a free valuation",
+  },
+  detail: {
+    breadcrumb: "Breadcrumb", specs: "Key facts", area: "Area", beds: "Bedrooms", baths: "Bathrooms", parking: "Parking", none: "None",
+    year: "Year built", floor: "Floor", ground: "Ground", of: "of", desc: "Description", features: "Features", location: "Location",
+    locationAria: (p: string) => `Approximate location: ${p}`, locationNote: "The exact address is shared once a viewing is arranged.",
+    contactAgent: "Contact the agent", visit: "Book a viewing", visitCta: "Send request",
+    subject: (t: string, id: string) => `Hi, please call me about viewing "${t}" (ref ${id}).`,
+    similar: "Similar listings", next: "Next image", prev: "Previous image", image: (n: string) => `image ${n}`, showImage: (n: string) => `Show image ${n}`,
+    notFound: "Listing not found",
+  },
+  form: { name: "Full name", phone: "Phone number", msg: "Message", sending: "Sending…", send: "Send message", phonePh: "0912 123 4567" },
+  agents: {
+    meta: "Agents & about us", title: "About us",
+    text: "Since 2012 we've helped buyers, sellers and tenants close clear, stress-free deals. Our belief is simple: a good agent listens first, then advises.",
+    stats: [["14", "Years of experience"], ["8,500", "Deals closed"], ["6", "Expert agents"], ["9", "Cities covered"]],
+    team: "Our team", meta2: (y: string, n: string) => `${y} years' experience · ${n} active listings`, cta: "Get in touch",
+  },
+  contact: {
+    title: "Contact us", sub: "Leave a message or give us a call. We usually reply within an hour.",
+    address: "Address", addressV: "No. 120, Valiasr St., above Saei Park, Tehran", phone: "Phone", email: "Email", hours: "Opening hours", hoursV: "Saturday to Thursday, 9:00–18:00",
+  },
+  fav: { title: "Saved listings", note: "This list is stored in this browser only.", emptyTitle: "You haven't saved any listings yet", emptySub: "Tap the heart on any listing to keep it here.", browse: "Browse listings" },
+  nf: { title: "Page not found", text: "The listing may have been sold or the address is wrong. Try searching again from the home page.", home: "Home page", browse: "Browse listings" },
+  footer: {
+    about: "Honest advice on buying, selling and renting property, with real prices, clear documents and support until handover.",
+    quick: "Quick links", buy: "Buy property", rent: "Rent", agents: "Our agents", contactTitle: "Get in touch",
+    demo: "Demo site; all listings and details are fictional. Prices shown in USD at an indicative rate. © 2026 Real Estate", credit: "Designed & developed by", dev: "Amir Rahemi",
+  },
+};
+
+export const dicts: Record<Lang, Dict> = { fa, en };
+export const getDict = (l: Lang) => dicts[l];
