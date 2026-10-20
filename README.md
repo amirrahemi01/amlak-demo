@@ -1,28 +1,25 @@
-# املاک توافق (Amlak Tavafogh)
+# املاک توافق — نسخه نمایشی (Amlak Demo v2)
 
-Static RTL (Persian) real-estate site.
+سایت املاک فارسی و راست‌به‌چپ، کاملاً استاتیک و بدون بک‌اند؛ ساخته‌شده به‌عنوان نمونه‌کار.
 
-## Pages
-- `index.html` — Home
-- `search.html` — Property search / listings
-- `property.html` — Property detail page
-- `team.html` — Our team
-- `projects.html` — Building projects (under construction / delivered / upcoming, with filter chips)
-- `contact.html` — Contact form + info cards + stylized map
+**صفحات:** خانه (جستجو، آگهی‌های ویژه و تازه) · جستجوی ملک (فیلتر + مرتب‌سازی) · جزئیات آگهی (گالری، مشخصات، امکانات، موقعیت، فرم بازدید) · مشاوران و درباره ما · تماس با ما · ذخیره‌شده‌ها (localStorage) · ۴۰۴
 
-All pages are linked via the nav bar (desktop + mobile hamburger menu), logo, and property/project cards.
+**امکانات:** ۳۷ آگهی نمونه (`src/data/listings.ts`) · تم روشن/تیره (پیش‌فرض: سیستم) · فرم‌های فقط‌UI با پیام موفقیت · فونت Vazirmatn · ارقام فارسی · دسترس‌پذیر · ریسپانسیو از ۳۲۰px.
 
-Note: `projects.html` and `contact.html` reuse a couple of the placeholder photos already used elsewhere in the demo (same asset host as the rest of the mock). Swap in real photography and hook the contact form up to your backend/email service before going live — right now it just shows a success message locally.
+## Stack
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · lucide-react · `next/font` (Vazirmatn، وزن‌های ۴۰۰/۵۰۰/۷۰۰).
+عکس‌ها از Unsplash و با لودر سفارشی (`src/lib/loader.ts`) از CDN خودش بهینه می‌شوند.
 
-## Deploy
-No build step needed — plain static HTML.
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin <your-repo-url>
-git push -u origin main
+## Run
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
 
-Then import the repo in Vercel (Framework Preset: **Other**) and deploy.
+## Deploy (Vercel)
+ریپو را در Vercel import کنید؛ تنظیمات پیش‌فرض Next.js کافی است (بدون متغیر محیطی).
+
+## Notes
+- همه آگهی‌ها، نام‌ها و شماره‌ها فرضی هستند.
+- برای تغییر رنگ اصلی، متغیرهای `--accent` را در `src/app/globals.css` ویرایش کنید.
